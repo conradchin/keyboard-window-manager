@@ -1,0 +1,40 @@
+﻿<Window x:Class="KeypadLayout.Preferences"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:KeypadLayout"
+        mc:Ignorable="d"
+        Title="KeyPadLayout - Preferences" 
+        Height="244.707" 
+        Width="525"
+        ResizeMode="NoResize"
+        PreviewMouseDown="preferencesBackground_PreviewMouseDown">
+    <Grid Name="myGrid" Margin="10,10,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+                <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                    <Label Width="80">Width:</Label>
+                    <xctk:IntegerUpDown x:Name="widthControl" Width="50" Value="{Binding Path=GridWidth}" Maximum="12" Minimum="1"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                    <Label Width="80">Height:</Label>
+                    <xctk:IntegerUpDown x:Name="heightControl" Width="50" Value="{Binding Path=GridHeight}" Maximum="12" Minimum="1"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                    <Label Width="80">Hotkey:</Label>
+                    <TextBox x:Name="hotkeyControl" Width="150" PreviewKeyDown="HotkeyControl_PreviewKeyDown" KeyUp="HotkeyControl_KeyUp" GotFocus="hotkeyControl_GotFocus" LostFocus="hotkeyControl_LostFocus"/>
+                    <Button Content="Remove" Width="75" Margin="10,0,0,0" Click="RemoveHotkeyButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" Grid.Row="1" Height="30">
+            <Button Content="Discard changes" Click="DiscardChangeButton_Click" Margin="10,0,0,0" />
+            <Button Content="Hide" Click="Close_Click" Width="75" Margin="10,0,0,0" x:Name="closeWindowButton"/>
+            <Button Content="Quit" Click="Quit_Click" Width="75" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
