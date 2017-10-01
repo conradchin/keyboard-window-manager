@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KeypadLayout"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="KeyPadLayout"
+        Title="keyboard-window-manager"
         Visibility="Hidden"
         ShowInTaskbar="False"
         WindowStyle="None"
